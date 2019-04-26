@@ -16,6 +16,7 @@ define( 'KHA_LIGHTBOX_VERSION', '0.5.0' );
 define( 'KHA_LIGHTBOX_PATH', dirname(__FILE__) );
 define( 'KHA_LIGHTBOX_MODULES_PATH', KHA_LIGHTBOX_PATH . '/modules' );
 define( 'KHA_LIGHTBOX_URL', plugins_url( 'sticky-admin-menu', dirname(__FILE__) ) );
+define( 'KHA_LIGHTBOX_ACTIVE', true );
 
 
 require_once KHA_LIGHTBOX_PATH . '/functions/lightbox.php';
