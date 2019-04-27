@@ -6,7 +6,7 @@ jQuery( document ).ready( function() {
  * Setup the lightbox functionality
  */
 function kha_set_up_lightbox() {
-
+console.log('set');
     /**
      * Open lightbox when cliking on the trigger
      */
@@ -19,7 +19,7 @@ function kha_set_up_lightbox() {
     /**
      * Close lightbox when clicking outside it, in the dark overlay
      */
-    jQuery( '.kha-lightbox-wrap' ).click( function() {
+    jQuery( '.kha-lightbox-wrap:not(.hardtoclose)' ).click( function() {
         kha_close_lightbox();
     });
  
@@ -35,6 +35,18 @@ function kha_set_up_lightbox() {
      */
     jQuery('.kha-lightbox').on('click', '.kha-lightbox-close-mech', function(){
         kha_close_lightbox();
+    });
+
+    /**
+     * Setup timed lightboxes
+     */ 
+    jQuery('.kha-lightbox-wrap.timed').each(function() { 
+        var timed_lightbox = jQuery(this);
+        var time_ms = timed_lightbox.attr('data-timing') * 1000;
+        
+        setTimeout( function() { 
+            kha_open_lightbox(timed_lightbox.attr('id'));
+        }, time_ms );
     });
 }
 

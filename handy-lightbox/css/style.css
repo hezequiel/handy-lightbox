@@ -27,6 +27,9 @@
     -moz-transform: translatey(-50%);
     -o-transform: translatey(-50%);
     transform: translatey(-50%);
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow: scroll;
 }
 
 .kha-lightbox-close {
@@ -38,4 +41,13 @@
     position: absolute;
     top: 7px;
     right: 12px;
+}
+
+@media screen and ( max-width: 768px ) {
+    .kha-lightbox {
+        min-width: 0;
+        width: 92%;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
 }
