@@ -21,5 +21,6 @@ define( 'KHA_LIGHTBOX_ACTIVE', true );
 
 require_once KHA_LIGHTBOX_PATH . '/functions/lightbox.php';
 require_once KHA_LIGHTBOX_PATH . '/functions/enqueue.php';
+require_once KHA_LIGHTBOX_PATH . '/functions/shortcodes.php';
 
 require_once KHA_LIGHTBOX_PATH . '/functions/kha-utilities.php';

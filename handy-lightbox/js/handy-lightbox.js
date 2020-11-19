@@ -20,7 +20,9 @@ function kha_set_up_lightbox() {
      * Close lightbox when clicking outside it, in the dark overlay
      */
     jQuery( '.kha-lightbox-wrap:not(.hardtoclose)' ).click( function() {
-        kha_close_lightbox();
+        var lightbox_id = jQuery(this).attr('id');
+        
+        kha_close_lightbox( lightbox_id );
     });
  
     /**
@@ -34,7 +36,9 @@ function kha_set_up_lightbox() {
      * Lightbox close button
      */
     jQuery('.kha-lightbox').on('click', '.kha-lightbox-close-mech', function(){
-        kha_close_lightbox();
+        var lightbox_id = jQuery(this).closest('.kha-lightbox-wrap').attr('id');
+
+        kha_close_lightbox( lightbox_id );
     });
 
     /**
@@ -62,8 +66,15 @@ function kha_open_lightbox( id ) {
 /**
  * Close currently open lightbox
  */
-function kha_close_lightbox() {
-    lightbox = jQuery('.kha-lightbox-wrap');
+function kha_close_lightbox( id ) {
+    
+    if ( id === undefined ) {
+        lightbox = jQuery('.kha-lightbox-wrap');
+    }
+    else {
+        lightbox = jQuery('#' + id);
+    }
+
     lightbox.css('opacity', '0');
     lightbox.hide();
 }
