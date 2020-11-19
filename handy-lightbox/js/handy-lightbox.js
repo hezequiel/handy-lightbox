@@ -6,7 +6,7 @@ jQuery( document ).ready( function() {
  * Setup the lightbox functionality
  */
 function kha_set_up_lightbox() {
-console.log('set');
+
     /**
      * Open lightbox when cliking on the trigger
      */
